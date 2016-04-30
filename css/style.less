@@ -1,0 +1,145 @@
+html, body{
+    margin: 0;
+    height: 100%;
+}
+
+#cf-wrapper{
+    height: 100%;
+
+    #cf-hero{
+        display: table;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: #EEE;
+
+        #cfh-contenido{
+            display: table-cell;
+            vertical-align: middle;
+
+            text-align: center;
+
+            #cfh-titulo, #cfh-subtitulo,#cfh-download{
+                display: block;
+            }
+            #cfh-titulo{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 38px;
+            }
+            #cfh-subtitulo{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 24px;
+            }
+            #cfh-download{
+                margin: 50px auto 0;
+                padding: 10px 20px;
+                box-sizing: border-box;
+
+                font-family: 'Open Sans', sans-serif;
+                font-size: 18px;
+
+                color: #FFF;
+                background: #2B343D;
+
+                border: none;
+                border-radius: 100px;
+
+                transition: all .3s ease;
+
+                &:hover, &:focus{
+                    background: lighten(#2B343D, 5%);
+                }
+            }
+        }
+    }
+
+    #cf-info{
+        padding: 100px 50px;
+        box-sizing: border-box;
+
+        background: #2B343D;
+
+        .cfi-titulo{
+            display: block;
+            margin-bottom: 50px;
+
+            font-family: 'Open Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+
+            text-align: center;
+
+            color: #FFF;
+        }
+
+        #cfi-demo{
+            margin: 0 auto 100px;
+            width: 800px;
+
+            pre{
+                margin-top: 25px;
+                height: 500px;
+                background-color: lighten(#2B343D, 10%);
+            }
+        }
+
+        #cfi-uso{
+            margin: 0 auto;
+            width: 800px;
+
+            ol#cfi-pasos{
+                margin: 0;
+                padding: 0;
+
+                list-style-type: none;
+                counter-reset: li;
+
+                li{
+                    position: relative;
+
+                    &:before{
+                        position: absolute;
+
+                        top: -7px;
+                        left: -60px;
+
+                        content: counter(li);
+                        counter-increment: li;
+
+                        display: block;
+
+                        width: 40px;
+                        height: 40px;
+
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 24px;
+
+                        font-weight: 600;
+                        text-align: center;
+                        line-height: 40px;
+
+                        color: #FFF;
+                        background: #2980b9;
+
+                        border-radius: 100px;
+                    }
+
+                    .cfi-paso{
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 18px;
+
+                        color: #FFF;
+                    }
+
+                    pre{
+                        margin-top: 25px;
+                        height: 200px;
+
+                        background-color: lighten(#2B343D, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
