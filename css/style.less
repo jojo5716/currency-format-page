@@ -1,3 +1,20 @@
+// Variables
+@colorPrincipal: #2B343D;
+@colorSecundario: #2e8ece;
+@colorTerciario: #34495e;
+
+.clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 html, body{
     margin: 0;
     height: 100%;
@@ -28,19 +45,21 @@ html, body{
                 font-size: 38px;
             }
             #cfh-subtitulo{
+                padding: 0 50px;
+
                 font-family: 'Open Sans', sans-serif;
                 font-size: 24px;
             }
             #cfh-download{
                 margin: 50px auto 0;
-                padding: 10px 20px;
+                padding: 10px 25px;
                 box-sizing: border-box;
 
                 font-family: 'Open Sans', sans-serif;
                 font-size: 18px;
 
                 color: #FFF;
-                background: #2B343D;
+                background: @colorPrincipal;
 
                 border: none;
                 border-radius: 100px;
@@ -48,25 +67,54 @@ html, body{
                 transition: all .3s ease;
 
                 &:hover, &:focus{
-                    background: lighten(#2B343D, 5%);
+                    background: lighten(@colorPrincipal, 5%);
                 }
+            }
+        }
+
+        #cfh-scroll-down{
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            margin: 0 auto;
+            box-sizing: border-box;
+
+            height: 100px;
+            width: 100px;
+
+            background: none;
+            border: none;
+
+            outline: 0;
+
+            &:before{
+                content: '\f103';
+
+                font-family: 'FontAwesome';
+                font-size: 50px;
+
+                color: @colorPrincipal;
             }
         }
     }
 
     #cf-info{
-        padding: 100px 50px;
+        padding: 100px 15px;
         box-sizing: border-box;
 
-        background: #2B343D;
+        background: @colorPrincipal;
 
         .cfi-titulo{
             display: block;
-            margin-bottom: 50px;
+            margin-bottom: 75px;
 
             font-family: 'Open Sans', sans-serif;
             font-size: 28px;
             font-weight: 600;
+            letter-spacing: 1px;
 
             text-align: center;
 
@@ -75,18 +123,120 @@ html, body{
 
         #cfi-demo{
             margin: 0 auto 100px;
-            width: 800px;
+            width: 600px;
 
-            pre{
-                margin-top: 25px;
-                height: 500px;
-                background-color: lighten(#2B343D, 10%);
+            @media(max-width: 630px){
+                width: 100%;
+            }
+
+            #cfi-ejemplo{
+                height: 250px;
+
+                background: lighten(@colorPrincipal, 5%);
+
+                .clearfix();
+
+                @media(max-width: 630px){
+                    height: auto;
+                }
+
+                #cfie-selectores{
+                    float: left;
+
+                    width: 50%;
+                    height: 100%;
+
+                    border-right: 1px solid @colorPrincipal;
+
+                    @media (max-width: 630px){
+                        width: 100%;
+                        border-right: none;
+                    }
+
+                    input, select{
+                        display: block;
+
+                        padding: 10px 25px;
+                        box-sizing: border-box;
+
+                        width: 100%;
+                        height: 33.33%;
+
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 28px;
+                        font-weight: 300;
+                        letter-spacing: 1px;
+
+                        color: #FFF;
+                        background: @colorTerciario;
+
+                        border: none;
+                    }
+
+                    select{
+                        &:nth-of-type(1){
+                            border-top: 1px solid @colorPrincipal;
+                            border-bottom: 1px solid @colorPrincipal;
+                        }
+                    }
+
+                    #cfie-cantidad{
+
+                    }
+                    #cfie-locale{
+
+                    }
+                    #cfie-monedas{
+
+                    }
+                }
+
+                #cfie-resultado{
+                    float: left;
+                    width: ~"calc(50% - 1px)";
+                    height: 100%;
+
+                    @media (max-width: 630px){
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    #cfie-cantidad-resultado{
+                        display: table;
+
+                        padding: 10px 25px;
+                        box-sizing: border-box;
+
+                        width: 100%;
+                        height: 100%;
+
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 40px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        text-align: center;
+
+                        color: #FFF;
+                        background: @colorSecundario;
+
+                        border-bottom: 1px solid @colorPrincipal;
+
+                        span{
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                }
             }
         }
 
         #cfi-uso{
             margin: 0 auto;
             width: 800px;
+
+            @media(max-width: 830px){
+                width: 100%;
+            }
 
             ol#cfi-pasos{
                 margin: 0;
@@ -98,45 +248,88 @@ html, body{
                 li{
                     position: relative;
 
-                    &:before{
-                        position: absolute;
-
-                        top: -7px;
-                        left: -60px;
-
-                        content: counter(li);
-                        counter-increment: li;
-
-                        display: block;
-
-                        width: 40px;
-                        height: 40px;
-
-                        font-family: 'Open Sans', sans-serif;
-                        font-size: 24px;
-
-                        font-weight: 600;
-                        text-align: center;
-                        line-height: 40px;
-
-                        color: #FFF;
-                        background: #2980b9;
-
-                        border-radius: 100px;
-                    }
+                    margin-bottom: 50px;
 
                     .cfi-paso{
+                        display: block;
+
+                        position: relative;
+                        left: 60px;
+
+                        margin-right: 60px;
+
                         font-family: 'Open Sans', sans-serif;
                         font-size: 18px;
+                        letter-spacing: 1px;
 
                         color: #FFF;
+
+                        &:before{
+                            position: absolute;
+
+                            top: -7px;
+                            left: -60px;
+
+                            content: counter(li);
+                            counter-increment: li;
+
+                            display: block;
+
+                            width: 40px;
+                            height: 40px;
+
+                            font-family: 'Open Sans', sans-serif;
+                            font-size: 24px;
+
+                            font-weight: 600;
+                            text-align: center;
+                            line-height: 40px;
+
+                            color: #FFF;
+                            background: @colorSecundario;
+
+                            border-radius: 100px;
+                        }
                     }
 
-                    pre{
+                    .cfi-code{
                         margin-top: 25px;
-                        height: 200px;
+                        padding: 25px;
 
-                        background-color: lighten(#2B343D, 10%);
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 16px;
+                        letter-spacing: 2px;
+
+                        color: #FFF;
+                        background-color: #272822;
+
+                        .cfic-tag{
+                            color: #F92672;
+                        }
+
+                        .cfic-attr{
+                            color: #A6E22E;
+                        }
+
+                        .cfic-value, .cfic-string{
+                            color: #FD971F;
+                        }
+
+                        .cfic-var{
+                            color: #66D9EF;
+                        }
+
+                        .cfic-igual{
+                            color: #F92672;
+                        }
+
+                        .cfic-number{
+                            color: #AE81FF;
+                        }
+
+                        .cfic-comentario{
+                            color: #75715E;
+                        }
                     }
                 }
             }
