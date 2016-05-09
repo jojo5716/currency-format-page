@@ -13,4 +13,9 @@ angular.module('CurrencyApp', [])
             var currencyFormat = function(amount, currency, locale){
                 return currencies.formatMoney(amount, currency, locale);
             };
+
+            $("#cfh-download").click(function(){
+                window.open('https://raw.githubusercontent.com/jojo5716/CurrencyFormat/master/currency-format.js', "_blank");
+            });
 }]);
+
