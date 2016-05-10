@@ -17,5 +17,11 @@ angular.module('CurrencyApp', [])
             $("#cfh-download").click(function(){
                 window.open('https://raw.githubusercontent.com/jojo5716/CurrencyFormat/master/currency-format.js', "_blank");
             });
+
+            $("#cfh-scroll-down").click(function(){
+                $('html, body').animate({
+                    scrollTop: $('#cf-info').offset().top
+                }, 500);
+            });
 }]);
 

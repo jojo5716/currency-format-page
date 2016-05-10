@@ -67,25 +67,25 @@ body {
   color: #2b343d;
 }
 #cf-wrapper #cf-info {
-  padding: 100px 15px;
+  padding: 100px 15px 0;
   box-sizing: border-box;
   background: #2b343d;
 }
 #cf-wrapper #cf-info .cfi-titulo {
   display: block;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   letter-spacing: 1px;
   text-align: center;
   color: #FFF;
 }
 #cf-wrapper #cf-info #cfi-demo {
-  margin: 0 auto 100px;
-  width: 600px;
+  margin: 0 auto 125px;
+  width: 800px;
 }
-@media (max-width: 630px) {
+@media (max-width: 830px) {
   #cf-wrapper #cf-info #cfi-demo {
     width: 100%;
   }
@@ -186,6 +186,8 @@ body {
 }
 #cf-wrapper #cf-info #cfi-uso ol#cfi-pasos li {
   position: relative;
+}
+#cf-wrapper #cf-info #cfi-uso ol#cfi-pasos li:nth-of-type(1) {
   margin-bottom: 50px;
 }
 #cf-wrapper #cf-info #cfi-uso ol#cfi-pasos li .cfi-paso {
@@ -217,7 +219,7 @@ body {
   border-radius: 100px;
 }
 #cf-wrapper #cf-info #cfi-uso ol#cfi-pasos li .cfi-code {
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 25px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -246,4 +248,33 @@ body {
 }
 #cf-wrapper #cf-info #cfi-uso ol#cfi-pasos li .cfi-code .cfic-comentario {
   color: #75715E;
+}
+#cf-wrapper #cf-footer {
+  padding: 100px 0 50px;
+  text-align: center;
+  background: #2b343d;
+}
+#cf-wrapper #cf-footer span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #FFF;
+}
+#cf-wrapper #cf-footer span i {
+  font-style: normal;
+}
+#cf-wrapper #cf-footer span i:before {
+  content: '\f004';
+  font-family: 'FontAwesome';
+  color: #c0392b;
+}
+#cf-wrapper #cf-footer span a {
+  text-decoration: none;
+  color: #7a8da1;
+  transition: all .3s ease;
+}
+#cf-wrapper #cf-footer span a:hover,
+#cf-wrapper #cf-footer span a:focus {
+  color: #899aab;
 }
